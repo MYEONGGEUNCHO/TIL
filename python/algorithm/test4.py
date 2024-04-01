@@ -1,15 +1,15 @@
 from typing import List
 num_dict = {
-    '0' : ['O', '()'],
-    '1' : 'I',
-    '2' : ['Z', 'S', '7_'],
-    '3' : ['E', 'B'],
-    '4' : 'A',
-    '5' : ['Z', 'S'],
-    '6' : ['b', 'G'],
-    '7' : ['T', 'Y'],
-    '8' : ['B', 'E3'],
-    '9' : ['g', 'q']
+    '0' : ['O', '()', '0'],
+    '1' : ['I', '1'],
+    '2' : ['Z', 'S', '7_', '2'],
+    '3' : ['E', 'B', '3'],
+    '4' : ['A', '4'],
+    '5' : ['Z', 'S', '5'],
+    '6' : ['b', 'G', '6'],
+    '7' : ['T', 'Y', '7'],
+    '8' : ['B', 'E3', '8'],
+    '9' : ['g', 'q', '9']
 }
 
 str_dict = {
@@ -32,40 +32,40 @@ str_dict = {
     'q': '9'
 }
 
+def next_word():
+    pass
 
-def check(k: str):
-
-    if k in num_dict[k]:
-        return num_dict[k]
-
+def check(numstr:str, word: str, idx: int) -> bool:
+    res = []
+    cnt = 0
+    for alpabet in numstr:
+        if alpabet == num_dict[idx]:
+            res.append(idx)
+        else:
+            cnt += 1
+    return False
+    
 
 
 def solution(numstrs: List[str], words: List[str]):
     
-    for numstr in numstrs:
-        for word in words:
-            res: list = []
-            for key in word:
-                if numstr.find(key):
-            # 숫자가 dict에 있는지 확인
-                    if key in num_dict:
-                        # 단어 조합
-                        mid_temp: List[str] =  [] # 임시 문자열 보관함
-                        for alphabet in num_dict[key]:
-                            temp = []
-                            # 이미 알파벳이 있으면
-                            if len(temp) > 1:
-                                # 기존 알파벳에 더하기
-                                for _ in temp:
-                                    _ += alphabet
+    res: list = []
+    for word in words:
+        cnt: int = 0
+        for numstr in numstrs:
+            idx = len(numstr)
+            word_length = len(word)
+            if len(word) > len(numstr):
+                res.append(0)
+            else:
+                if check(numstr=numstr, word=word, idx=idx):
+                    pass
 
-                                    temp.append(_)
-                            elif len(temp) == len(word):
-                                mid_temp = temp
-                            else:
-                                temp.append(alphabet)
-                        # 안되는 조건
-    
+            # 다른 키에 같은 문자X
+
+            # 같은 키에 다른 문자O
+
+
                 
                 
 x = ['ZASSETE', 'S4Z537B', '7_ASZEYB']
@@ -73,4 +73,4 @@ x = ['ZASSETE', 'S4Z537B', '7_ASZEYB']
 # y = ['2455373', '425', '373', '378']
 y = ['425']
 
-solution(x, y)
+print(solution(x, y))
