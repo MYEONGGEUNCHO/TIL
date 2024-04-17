@@ -1,0 +1,52 @@
+#container {
+    text-align: center;
+    border: 2px solid #000;
+    width: 1000px;
+    box-sizing: border-box;
+    background-color: #e3e3e3;
+}
+
+.header {
+    border: 2px solid #000;
+    padding: 40px 0;
+}
+
+.nav {
+    /* border: 2px solid #000; */
+}
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.list li {
+    border: 2px solid #000;
+    float: left;
+    height: 40px;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.content {
+    border: 2px solid #000;
+    clear: both;
+
+}
+
+.aside {
+    border: 2px solid #000;
+    float: left;
+    width: 30%;
+    padding: 100px 0;
+}
+
+.section1 {
+    border: 2px solid #000;
+    padding: 100px 0;
+}
+
+.footer {
+    border: 2px solid #000;
+    padding: 30px 0;
+    clear: both;
+}
