@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 1;
+        console.log(typeof(num));
+        var name = '홍길동';
+        console.log(name);
+        // 배열
+
+        // 객체
+
+        // 값이 없는 경우
+        var val;
+        console.log(val)
+        // 함수
+        function test() {
+            console.log(1)
+        }
+        console.log(typeof test());
+
+        // 숫자 -> 문자
+        var a = String(3);
+        console.log(a);
+        var b = toString(4);
+        console.log(b);
+
+        // 문자 -> 숫자
+        var c = Number('5');
+        console.log(c);
+        var d = parseInt('7');
+        console.log(d);
+
+        var e = '';
+        console.log(Number(e)); // 0
+        console.log(parseInt(e)); // NaN
+
+    </script>
+</body>
+</html>

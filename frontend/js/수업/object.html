@@ -1,0 +1,22 @@
+<script>
+    var arr = new Array();
+    arr = ['one', 'two', 'three', 'four']
+
+
+
+
+    for (i in arr) {
+        console.log(arr[i]);
+    };
+
+
+    var now = new Date();
+    var firstDay = new Date('2024-03-12');
+
+    var passedTime = now.getTime() - firstDay.getTime();
+    
+    passedTime = Math.round(passedTime/(1000*60*60*24));
+    console.log(passedTime);
+    
+
+</script>

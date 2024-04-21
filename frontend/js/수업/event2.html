@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            clear: both;
+            width:500px;
+            height:300px;
+            margin:30px auto;
+            border:2px solid #ccc;
+            border-radius:15px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="" id="color" onkeyup="printColorBg()">
+    <div id="result"></div>
+    <input type="button" value="버튼2" class="btn">
+    <input type="button" value="버튼3" class="btn">
+    <input type="button" value="버튼4" class="btn">
+    <input type="button" value="버튼5" class="btn">
+    <input type="button" value="버튼6" class="btn6">
+    <input type="button" value="팝업" id="popup">
+    <script>
+        function printColorBg() {
+            var color = document.getElementById('color').value;
+            var result = document.getElementById('result'); // 'querySelector'가 아닌 'getElementById'로 수정
+            result.style.backgroundColor = color;
+        }
+
+        window.onload = function () {
+            // var btn1 = document.querySelectorAll(".btn");
+            // console.log(btn1);
+
+            // for (let i=0; i<btn1.length; i++){
+            //     console.log(btn1[i]);
+            //     btn1[i].onclick = function () {
+            //         alert(btn1[i].value);
+            //     }
+            // }
+
+            // var btn6 = document.querySelector("#btn6");
+            // console.log(btn6);
+            // btn6.addEventListener('click', function() {
+            //     alert('click6');
+            // });
+
+            document.querySelector("#popup").onclick=function(){
+                window.open('eventlisener.html', 'event', 'width=800, height=600, left=100, top=100')
+            };
+        };
+    </script>
+</body>
+<!-- <body>
+    <input type="text" value="" id="color" onkeyup="printColorBg()">
+    <div id="result"></div>
+    <script>
+        function printColorBg() {
+            var color = document.getElementById('color').value;
+            console.log(color)
+            var result = document.querySelector('result');
+            result.style.backgroundColor = color;
+        };
+    </script>
+ -->
+</body>
+</html>

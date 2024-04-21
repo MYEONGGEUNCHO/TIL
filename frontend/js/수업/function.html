@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        함수 정의
+        function 함수명 ([매개변수...]) {
+            실행문...
+            [return 값]
+        }
+        */
+        
+        // 함수 선언
+        function aaa() {
+            console.log('aaa')
+        }
+
+        // 함수 실행/호출/콜
+        aaa();
+
+        // 익명함수 -> 위에서 사용 안됨, who existing?
+        var bbb = function () {
+            console.log('bbb')
+        };
+        bbb();
+
+        var arr = [function() {
+            console.log('ccc')
+        }]
+
+        console.log(typeof arr[0])
+
+        // 즉시 실행함수
+        (function ccc() {
+            console.log('ccc');
+        })();
+        // 화살표 함수
+        var bbb2 = () => {
+            console.log('bbb2')
+        }
+        bbb2();
+    </script>
+</body>
+</html>

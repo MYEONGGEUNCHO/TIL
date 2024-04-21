@@ -1,0 +1,64 @@
+<script>
+    function sum(a, b, c) {
+        return a + b + c;
+    };
+
+    console.log(sum(1, 2, 3));
+
+    // 가변인자 - 길이를 모름
+    function sum() {
+        total = 0
+        // for (a in arguments) {
+        //     total += a
+        // }  
+        console.log(total)
+    };
+
+    sum(2,3,4,5,6,7,8);
+
+    // 함수를 매개변수로 전달
+    function calculator(func) {
+        func(2, 3, 4, 5, 6);
+    };
+
+    calculator(sum);
+    arr = [1,2,3,4,5]
+
+    // 콜백함수, 함수를 매개변수로 전달
+    calculator(function (){
+        total = 0;
+        for (let i=0; i<arguments.length; i++) {
+            total += arguments[i]
+        }
+        console.log(total);
+    });
+
+    // calculator( arr => {
+    //     total = 0;
+    //     for (let i=0; i<arguments.length; i++){
+    //         total += arr[i]
+    //     }
+    //     console.log(total)
+    // });
+
+    function run () {
+        console.log('뛰다');
+    };
+    function run () {
+        console.log('빨리 뛰다');
+    };
+    run();
+
+    function health () {
+        function run () {
+            console.log('뛰다')
+        }
+        run();
+    }
+    health();
+    // 인코딩 함수 (escape()), encodeURI(), encodeURIComponent())
+    // 인코딩 함수 (unescape()), decodeURI(), decodeURIComponent())
+    console.log(encodeURIComponent('안녕하세요'))
+    encoding = encodeURIComponent('안녕하세요')
+    console.log(decodeURIComponent(encoding))
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function plusBt() {
+            var result = document.getElementById('result');
+            var currentValue = parseInt(result.innerHTML); // 현재 값 가져오기
+            result.innerHTML = currentValue + 1; // 현재 값에 1을 더해서 업데이트
+        }
+
+        function minusBt() {
+            var result = document.getElementById('result');
+            var currentValue = parseInt(result.innerHTML); // 현재 값 가져오기
+            result.innerHTML = currentValue - 1; // 현재 값에 1을 빼서 업데이트
+        }
+
+        window.onload = function () {
+            // type 속성 접근 -> return 배열 -> forEach
+            // 화살표 함수 ele, 인덱스 -> ele.onclick 클릭되면 
+            // -> 함수실행 -> e.value값이 증가면, 감소면
+            var temp = document.querySelectorAll(".btn")
+            console.log(temp)
+            document.querySelectorAll(".btn").forEach( e => {
+                console.log(e.value)
+                e.addEventListener('click', function() {
+                    console.log(e.value)
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="증가" class="btn" onclick="plusBt()">
+    <input type="button" value="감소" class="btn" onclick="minusBt()">
+    <h1 id="result">0</h1>
+    
+</body>
+</html>

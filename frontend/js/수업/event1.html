@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        ul li {
+            width: 100px;
+            height: 50px;
+            border: 1px solid #000;
+            float: left;
+            margin: 30px;
+            text-align: center;
+        }
+        #result {
+            clear: both;
+            width:500px;
+            height:300px;
+            margin:30px auto;
+            border:2px solid #ccc;
+            border-radius:15px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="버튼" onclick="alert('클릭')">
+    <br>
+    <ul>
+        <li><a href="#" onclick="changeBg('red')">메뉴1</a> </li>
+        <li><a href="#" onclick="changeBg('orange')">메뉴2</a></li>
+        <li><a href="#" onclick="changeBg('yellow')">메뉴3</a></li>
+        <li><a href="#" onclick="changeBg('green')">메뉴4</a</li>
+    </ul>
+    <div id="result"></div>
+    <script>
+		function changeBg(color) {
+			var result = document.querySelector('#result');
+			result.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>
