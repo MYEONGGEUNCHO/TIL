@@ -1,0 +1,11 @@
+<!-- <script src="/frontend/js/수업/js/test2.js"></script> 전체 다 불러옴
+<script src="/frontend/js/수업/js/test1.js"></script> 실행 순서 -->
+
+<script type="module">
+    import {func1, func3} from './js/test1.js'
+    import xxx, {func2, func32} from './js/test2.js' // {} 중괄호가 없는 이유 default로 가져오는게 있기 떄문
+    func1();
+    // func2();
+    // xxx();
+    // func32();
+</script>

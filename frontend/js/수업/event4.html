@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(window).load(() => {
+        //     alert('load');
+        // });
+
+
+
+        // window.onload = () => {
+        //     alert('load')
+        // };
+
+        // $(document).ready(() => {
+        //     alert('ready')
+        // });
+
+        // $(() => {
+        //     alert('$arrow function')
+        // })
+
+        // $(function () {
+        //     alert('$function')
+        // })
+
+        // $(function () {
+        //     $('.list').click(function () {
+        //         alert($(this).text())
+        //     })
+        // })
+
+        // $(function () {
+        //     $(".list").click(() => {
+        //         alert($(this).text());
+        //     });
+        // });
+
+        $(function () {
+            $(".list").mouseover(function () {
+                alert($(this).text());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="list">제목1</div>
+    <div class="list">제목2</div>
+    <div class="list">제목3</div>
+    <div class="list">제목4</div>
+    <div class="list">제목5</div>
+</body>
+</html>

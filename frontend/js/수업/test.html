@@ -1,0 +1,23 @@
+<script>
+    function test() {
+        var hi = '안녕하세요'
+        return function() {
+            return hi
+        };
+    };
+
+    var hi2 = test(); // 함수가 담겨있는 hi2 변수
+    // console.log(hi2());
+
+    function test2(name) {
+        var str = name + '님 안녕하세요.';
+        return function() {
+            return str
+        }
+    };
+
+    var f1 = test2('조명근');
+    var f2 = test2('홍길동');
+    console.log(f1());
+    console.log(f2());
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script>
+        $(function() {
+            $("#btn").on("click", function() {
+                // alert(1);
+                $.ajax({
+                    url: "board.json",
+                    success: function(data) {
+                        // console.log(data)
+                        // $.each(data, function(i, e) {
+                        //     console.log(e)
+                        //     console.log(typeof e)
+                        // });
+
+                        $("tbl").empty();
+                        $.each(data, (i, e) => {
+                            // console.log(e)
+                            // console.log(typeof e)
+                            $("#tbl").append("<tr><td>"+ e.no +"</td><td>"+ e.title +"</td><td>"+ e.name +"</td><td>"+ e.writedate +"</td></tr>")
+                        });
+
+                        // data.array.forEach(element => {
+                        //     console.log(element)
+                        // });
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn">
+    <table border="1" id="tbl">
+
+    </table>
+</body>
+</html>

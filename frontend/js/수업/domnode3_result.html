@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add() {
+            var text = document.querySelector("#subject").value;
+            if (text === '') {
+                alert('주제를 입력하세요');
+                return;
+            }
+            var li = document.createElement("li");
+            var textNode = document.createTextNode(text);
+            li.appendChild(textNode);
+
+            document.querySelector("#itemList").appendChild(li);
+
+            document.querySelector("#subject").value = "";
+
+            // var items = document.querySelectorAll("li");
+            // for (let i=0; i<items.length; i++) {
+            //     items[i].addEventListener('click', function() {
+            //         console.log(this);
+            //         // if (this.parentNode) {
+            //         //     this.parentNode.removeChild(this);
+            //         // }
+            //     })
+            // };
+            li.addEventListener('click', function() {
+                li.parentNode.removeChild(this);
+            });
+        }
+        window.onload = function(e) {
+            document.querySelector("#subject").addEventListener('keypress', function(e) {
+                // console.log(e.keyCode);
+                if (e.keyCode == 13) {
+                    add();
+                }
+            });
+            
+        };
+    </script>
+</head>
+<body>
+    <h1>Web Programming</h1>
+    <h3>공부할 주제를 기록해 보세요.</h3>
+    <div>
+        <input type="text" id="subject">
+        <input type="button" onclick="add();" value="추가">
+    </div>
+    <ul id="itemList">
+
+    </ul>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<script>
+    // console.log(navigator.userAgent);
+
+    // 객체 선언 방법
+    var car = {
+        model: '아반떼', 
+        company: '현대', 
+        color: '흰색',
+
+        run : function() {
+            console.log('자동차가 달린다.')
+        }
+    };
+
+    console.log(typeof car);
+    console.log(car.run());
+    console.log(car);
+    // 함수실행
+    car.run();
+    // 함수속성
+    console.log(car.model);
+    console.log(car['color']);
+
+    // 생성자 함수
+    function Student() {
+
+    }
+
+    var s = new Student();
+
+    s.name = '홍길동';
+    s.grade = 1;
+    s.run = function () {
+        console.log('등교');
+    };
+    // console.log(s)
+    // s.run();
+
+    // 생성자 함수
+    function Square(w, h) {
+        var width = w;
+        var height = h;
+
+        this.res = 0;
+        this.cal = function () {
+            this.res = width * height;
+        };
+    };
+    var a = new Square(2, 3);
+    // 지역변수라서 없음
+    // console.log(a.width);
+    // console.log(a.cal());
+    // console.log(a.res);
+    console.log(a);
+    a.cal();
+    console.log(a.res);
+
+    // 클래스
+    class Square2 {
+        constructor (w, h) {
+            this.width = w;
+            this.height = h;
+        }
+
+        cal() {
+            this.res = this.width * this.height;
+            return this.res;
+        }
+    }
+
+    var b = new Square2(4, 5);
+    console.log(b.cal());
+    
+</script>

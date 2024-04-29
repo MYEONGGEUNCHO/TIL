@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #box {
+            border: 1px solid #000;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+    <script>
+        $(function() {
+            $("#btn").bind('click', function() {
+                // alert(1);
+                // $("#box").hide();
+                // console.log($("#box"));
+                // $("#box").show();
+                // $("#box").toggle();
+                // console.log($("#box"));
+                // $("#box").slideDown();
+                // $("#box").slideUp();
+                // confirm.log(this);
+                $("#box").animate({
+                    // left: 300
+                    width: 150
+                }, 2000, function(e) {
+                    this.style.color = "#0000ff"
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn" >
+    <!-- <div id="box" style="display: none;"> -->
+    <div id="box">
+
+    </div>
+</body>
+</html>

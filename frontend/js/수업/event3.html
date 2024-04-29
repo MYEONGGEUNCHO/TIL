@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/frontend/js/수업/img/snow.jpg" alt="겨울" id="snow">
+    <script>
+        var snow = document.getElementById('snow');
+        var snow1 = document.querySelector('#snow');
+        // 
+        // snow.onclick = function () {
+        //     alert('이게 맞아');
+        // };
+
+        // 처음
+        // function alertImg () {
+        //     snow.onclick = alert('이거 맞아?')
+        // }
+        
+        // snow1.onclick = function() {
+        //     alert('이미지를 클릭했습니다')
+        // };
+
+        // snow.onclick = abc;
+
+        // function abc (e) {
+        //     // snow.src = "/frontend/js/수업/img/bg5.jpg"
+        //     console.log(e);
+        //     console.log(e.target); // this랑 똑가틍ㅁ
+        //     console.log(this);
+        //     snow.setAttribute('src', '/frontend/js/수업/img/bg5.jpg')
+        // }
+        
+        // 1번
+        // snow.addEventListener('mouseover', changePic);
+        // snow.addEventListener('mouseout', originPic);
+
+        // function changePic () {
+        //     snow.src = '/frontend/js/수업/img/bg5.jpg'
+        // };
+
+        // function originPic () {
+        //     snow.src = '/frontend/js/수업/img/snow.jpg'
+        // };
+            
+        
+        // 2번
+        snow.addEventListener('mouseover', () => {
+            snow.setAttribute('src', '/frontend/js/수업/img/bg5.jpg')
+            // snow.setAttribute('style', 'backgound-color:red;') // 중요 -> Camel표기법
+            // snow.style.backgroundColor='red';
+            // snow.setAttribute('style', 'border-radius:50%;')
+            snow.style.borderRadius='50%'
+        })
+        snow.addEventListener('mouseout', () => {
+            snow.setAttribute('src', '/frontend/js/수업/img/snow.jpg')
+            snow.removeAttribute
+        })
+    </script>
+</body>
+</html>

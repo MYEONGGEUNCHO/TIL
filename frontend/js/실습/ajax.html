@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 시간 측정</title>
+    <style>
+        #timeDisplay {
+            display: none; /* 페이지 로드시 시간 숨기기 */
+            background-color: green;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 400px; /* 너비 설정 */
+            height: 30px; /* 높이 설정 */
+            position: absolute; /* 절대 위치 설정 */
+            top: 10%; /* 화면 상단에서 절반 위치 */
+            left: 30%; /* 화면 좌측에서 절반 위치 */
+            transform: translate(-50%, -50%); /* 수직 및 수평 정렬 */
+            text-align: center; /* 텍스트 가운데 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="시작" id="start">
+    <input type="button" value="끝" id="end">
+    <div id="timeDisplay">00:00:000</div>
+
+    <script>
+        var intervalID; // setInterval 함수의 ID를 저장할 변수
+        var startTime; // 시작 시간을 저장할 변수
+        var successDisplayed = false; // 성공 여부가 이미 표시되었는지 여부를 나타내는 변수
+
+        window.onload = function () {
+            // 페이지 로드시 시간을 초기화하여 00:00:000으로 설정
+            document.getElementById('timeDisplay').innerHTML = '00:00:000';
+
+            document.querySelector('#start').onclick = () => {
+                startTime = new Date(); // 시작 시간을 현재 시간으로 설정
+                document.getElementById('timeDisplay').style.display = 'block'; // 초록 상자 보임
+                clearInterval(intervalID); // 이전의 setInterval 함수를 중지
+                intervalID = setInterval(updateElapsedTime, 10); // 10밀리초마다 경과 시간 업데이트
+                successDisplayed = false; // 성공 여부 초기화
+            };
+
+            document.querySelector('#end').onclick = () => {
+                clearInterval(intervalID); // setInterval 함수 멈춤
+                var endTime = new Date(); // 종료 시간을 현재 시간으로 설정
+                var elapsedTime = endTime - startTime; // 경과 시간 계산
+
+                if (elapsedTime === 1000) {
+                    document.getElementById('timeDisplay').innerHTML = '성공';
+                } else {
+                    document.getElementById('timeDisplay').innerHTML = '경과 시간: ' + formatTime(elapsedTime); // 경과 시간을 결과 창에 추가
+                }
+            };
+        };
+
+        function updateElapsedTime() {
+            var currentTime = new Date(); // 현재 시간을 가져옴
+            var elapsedTime = currentTime - startTime; // 경과 시간 계산
+            document.getElementById('timeDisplay').innerHTML = formatTime(elapsedTime); // 경과 시간을 결과 창에 업데이트
+
+            // 성공 여부 표시
+            if (!successDisplayed && elapsedTime === 1000) {
+                document.getElementById('timeDisplay').innerHTML = '성공';
+                successDisplayed = true;
+            }
+        }
+
+        function formatTime(milliseconds) {
+            var hours = Math.floor(milliseconds / (1000 * 60 * 60));
+            milliseconds %= (1000 * 60 * 60);
+            var minutes = Math.floor(milliseconds / (1000 * 60));
+            milliseconds %= (1000 * 60);
+            var seconds = Math.floor(milliseconds / 1000);
+            milliseconds %= 1000;
+            return ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2) + '.' + ('000' + milliseconds).slice(-3);
+        }
+    </script>
+</body>
+</html>

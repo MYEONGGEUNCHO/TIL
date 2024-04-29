@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".thumbnail").click(function() {
+                console.log($(".thumbnail"));
+                console.log($(".thumbnail").index($(this))); //
+                var idx = $(".thumbnail").index($(this)); // .index => 위치 리턴
+                console.log($("input[type='hidden']").eq(idx).val())
+                console.log($(this).data('name'))
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="/frontend/js/수업/img/bg-img1.png" class="thumbnail" data-name="A">
+    <img src="/frontend/js/수업/img/bg-img1.png" class="thumbnail" data-name="B">
+    <img src="/frontend/js/수업/img/bg-img1.png" class="thumbnail" data-name="C">
+    <img src="/frontend/js/수업/img/bg-img1.png" class="thumbnail" data-name="D">
+    <img src="/frontend/js/수업/img/bg-img1.png" class="thumbnail" data-name="E">
+    <input type="hidden" name="imgName" value="A">
+    <input type="hidden" name="imgName" value="B">
+    <input type="hidden" name="imgName" value="C">
+    <input type="hidden" name="imgName" value="D">
+    <input type="hidden" name="imgName" value="E">
+</body>
+</html>

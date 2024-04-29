@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id="abc">안녕</span>
+        
+    </div>
+    <script>
+        document.getElementById('abc').innerHTML = '<h1>안녕 바보야</h1>';
+        console.log(document.getElementById('abc').getAttribute('id'));
+        document.getElementById('abc').setAttribute('style', 'color:orange');
+    </script>
+</body>
+</html>
